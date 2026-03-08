@@ -25,7 +25,7 @@ project:
 # This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
 pinout:
   # Inputs
-  ui[0]: "VCMUXIN"
+  ui[0]: ""
   ui[1]: ""
   ui[2]: ""
   ui[3]: ""
@@ -45,8 +45,8 @@ pinout:
   uo[7]: ""
 
   # Bidirectional pins
-  uio[0]: "VCMUXIN"
-  uio[1]: "VCMUXOUT"
+  uio[0]: ""
+  uio[1]: ""
   uio[2]: ""
   uio[3]: ""
   uio[4]: ""
