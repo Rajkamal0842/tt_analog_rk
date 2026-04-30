@@ -5,12 +5,12 @@ project:
   description: "Analog clock generation unit with voltage-controlled MUX routing between 3, 5, and 7-stage ring oscillators on the Sky130 process."
   language: "Analog"
   clock_hz: 0
-tiles: "1x2"
-analog_pins: 2
-uses_3v3: false
-top_module: "tt_um_rajkamal_analog"
-source_files:
-  - "project.v"
+  tiles: "1x2"
+  analog_pins: 2
+  uses_3v3: false
+  top_module: "tt_um_rajkamal_analog"
+  source_files:
+    - "project.v"
 pinout:
   ui[0]: ""
   ui[1]: ""
