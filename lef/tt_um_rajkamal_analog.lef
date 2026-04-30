@@ -2,9 +2,9 @@ VERSION 5.7 ;
   NOWIREEXTENSIONATPIN ON ;
   DIVIDERCHAR "/" ;
   BUSBITCHARS "[]" ;
-MACRO tt_um_yen
+MACRO tt_um_rajkamal_analog
   CLASS BLOCK ;
-  FOREIGN tt_um_yen ;
+  FOREIGN tt_um_rajkamal_analog ;
   ORIGIN 0.000 0.000 ;
   SIZE 161.000 BY 225.760 ;
   PIN clk
@@ -525,6 +525,5 @@ MACRO tt_um_yen
         RECT 114.470 1.000 132.090 1.400 ;
         RECT 133.790 1.000 151.410 1.400 ;
   END
-END tt_um_yen
+END tt_um_rajkamal_analog
 END LIBRARY
-
