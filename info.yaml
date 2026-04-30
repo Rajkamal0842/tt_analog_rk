@@ -1,4 +1,3 @@
-cat > info.yaml << 'EOF'
 project:
   title: "Multi-Stage Configurable Ring Oscillator"
   author: "Nemalipuri Rajkamal"
@@ -44,4 +43,3 @@ pinout:
   ua[4]: ""
   ua[5]: ""
 yaml_version: 6
-EOF
