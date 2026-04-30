@@ -1,71 +1,51 @@
-# ============================================================
-#  Tiny Tapeout Analog – info.yaml
-#  Multi-Stage Configurable Ring Oscillator
-#  Author : Nemalipuri Rajkamal
-# ============================================================
-
 project:
-  title:        "Multi-Stage Configurable Ring Oscillator – Clock Generation Unit"
+  title:        "Multi-Stage Configurable Ring Oscillator"
   author:       "Nemalipuri Rajkamal"
-  discord:      ""          # optional: your TT Discord handle
-  description:  >
-    A fully custom analog ring oscillator implemented in the Sky130 PDK.
-    Eight digital control pins select among 7 / 15 / 21 / 31 / 41 / 51 / 57 / 63
-    inverter stages, enabling a wide tunable frequency range. The oscillator
-    output is exposed on ua[0] for direct probing. Decoupling capacitors
-    (MOS-CAP cells) fill the remaining die area to achieve >50 % utilisation
-    and to stabilise VDD against switching noise. This project demonstrates
-    custom cell layout, analog I/O integration, and supply-noise mitigation
-    techniques targeting a professional VLSI portfolio.
+  discord:      ""
+  description:  "Analog clock generation unit with voltage-controlled MUX routing between 3, 5, and 7-stage ring oscillators on the Sky130 process."
+  language:     "Analog"
+  clock_hz:     0
 
-  top_module:   "tt_um_rajkamal_analog"
-  language:     "verilog"
-  clock_hz:     0           # self-oscillating – no external clock required
+tiles: "1x2"
 
-  # ── I/O description ──────────────────────────────────────────
-  inputs:
-    - "ui_in[0]  : stage_sel bit 0"
-    - "ui_in[1]  : stage_sel bit 1"
-    - "ui_in[2]  : stage_sel bit 2  (000=7 stages … 111=63 stages)"
-    - "ui_in[3]  : osc_en  – oscillator global enable (active-high)"
-    - "ui_in[4]  : bypass  – route oscillator directly to uio_out[0]"
-    - "ui_in[5]  : reserved"
-    - "ui_in[6]  : reserved"
-    - "ui_in[7]  : reserved"
+analog_pins: 2
+uses_3v3: false
 
-  outputs:
-    - "uo_out[0] : divided clock output (osc / 2)"
-    - "uo_out[1] : raw oscillator output (digital path)"
-    - "uo_out[2] : stage_count[0] – readback"
-    - "uo_out[3] : stage_count[1] – readback"
-    - "uo_out[4] : stage_count[2] – readback"
-    - "uo_out[5] : stage_count[3] – readback"
-    - "uo_out[6] : stage_count[4] – readback"
-    - "uo_out[7] : stage_count[5] – readback"
+top_module: "tt_um_rajkamal_analog"
 
-  bidirectional:
-    - "uio[0]    : bypass / direct oscillator output"
-    - "uio[7:1]  : reserved (input mode)"
+source_files:
+  - "project.v"
 
-  analog:
-    - "ua[0]     : analog frequency output – buffered ring-oscillator node"
-    - "ua[7:1]   : reserved / NC"
+pinout:
+  ui[0]: ""
+  ui[1]: ""
+  ui[2]: ""
+  ui[3]: ""
+  ui[4]: ""
+  ui[5]: ""
+  ui[6]: ""
+  ui[7]: ""
+  uo[0]: ""
+  uo[1]: ""
+  uo[2]: ""
+  uo[3]: ""
+  uo[4]: ""
+  uo[5]: ""
+  uo[6]: ""
+  uo[7]: ""
+  uio[0]: ""
+  uio[1]: ""
+  uio[2]: ""
+  uio[3]: ""
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
+  ua[0]: "Analog output — selected oscillator frequency"
+  ua[1]: "Analog input — voltage threshold selector (0–1.8V)"
+  ua[2]: ""
+  ua[3]: ""
+  ua[4]: ""
+  ua[5]: ""
 
-  # ── Physical / process details ───────────────────────────────
-  process:      "sky130"
-  analog:       true
-  
-
-  # ── Portfolio tags ───────────────────────────────────────────
-  tags:
-    - ring oscillator
-    - clock generation
-    - analog design
-    - sky130
-    - custom layout
-    - decoupling capacitor
-    - VLSI portfolio
-    - configurable frequency
-
-  # ── Documentation ────────────────────────────────────────────
-  doc_link:     "https://github.com/Rajkamal0842/tt_analog_rk"
+yaml_version: 6
